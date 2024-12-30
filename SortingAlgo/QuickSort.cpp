@@ -3,17 +3,18 @@ using namespace std;
 
 int partition(int *arr, int l, int h){
     int pivot = arr[h];
-    int i = l-1, j = l;
+    int idx = l-1; // virtual idx
+    int j = l;
 
     while(j<h){
         if(arr[j]<= pivot){
-            i++;
-            swap(arr[j], arr[i]); //  [40, 10, 30] ~=  [10, 40, 30]
+            idx++;
+            swap(arr[j], arr[idx]); //  [40, 10, 30] ~=  [10, 40, 30]
         }
         j++;
     }
-    swap(arr[i+1] , arr[h]); // Put pivot at correct location
-    return i+1; // return pivot index
+    swap(arr[idx+1] , arr[h]); // Put pivot at correct location
+    return idx+1; // return pivot index
 }
 
 void quickSort(int arr[], int l, int h){

@@ -5,7 +5,7 @@ void merge(int *arr, int l, int mid, int h){
     int n1 = mid-l+1;
     int n2 = h-mid;
     int *larr = new int[n1]; // left arr
-    int *rarr = new int[n2]; // left arr
+    int *rarr = new int[n2]; // right arr
 
     for(int i=0;i<n1;i++)
         larr[i] = arr[l+i]; // 3 1
@@ -17,10 +17,9 @@ void merge(int *arr, int l, int mid, int h){
     // merge & compare
     while(i<n1 && j<n2){
         if(larr[i]<=rarr[j])
-            arr[k] = larr[i++];
+            arr[k++] = larr[i++];
         else if(larr[i]>rarr[j])
-            arr[k]  = rarr[j++];        
-        k++;
+            arr[k++]  = rarr[j++];                
     }
 
     while(i<n1)
