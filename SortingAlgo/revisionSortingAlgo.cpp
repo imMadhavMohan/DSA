@@ -59,13 +59,14 @@ int partition(int arr[], int l, int h){
     int pivot = arr[h]; 
     int idx = l-1; // consider l-1 as pivots virtual index
     
-    for(int i=l;i<h;i++)
+    for(int i=l;i<h;i++){
         if(arr[i]<=pivot){
             idx++;
             swap(arr[i], arr[idx]);
         }
-    
-    swap(arr[h], arr[idx+1]);
+    }
+    // Place pivot at its correct position
+    swap(arr[h], arr[idx+1]); // this case: when for loop doesn't modify anything: {vir: idx, 7, 4, 1, 3, 0, 6}
     return idx+1;
 }
 
