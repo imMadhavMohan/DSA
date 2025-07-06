@@ -45,6 +45,7 @@ int main(){
     // Actual sorting by deletion & keeping largest atom at last
     for(int i=n;i>0;i--)
         heapDelete(arr, i); // reducing size of heap after deletion
+        
     printHeap(arr, n);   
     return 0;
 }

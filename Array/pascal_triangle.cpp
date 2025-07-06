@@ -19,7 +19,7 @@ so (4,2)th element of pascal triangle nCr = n! / (r! * (n-r)!) = 4x3x2/2x2 // n 
 Binomial cofficients:
 (a+b)^n = nC0*a^n * b^0 + nC1*a^n-1 * b^1 + . . . + nCn*a^n-n * b^n
 
-Optimisation: 10C3 = 10x9x8x7! / (3x2x1) (7!) = for(i=10;i>(10-3);i--) / for(i=r;i>0;i--)
+Optimisation: 10C3 = 10x9x8x7! / (3x2x1) (7!) = [for(i=n;i>(n-r);i--) / for(i=r;i>0;i--)]
 int res = 1;
 int nCr(int n, int r){ // n=10; r=3
     for(int i=0;i<r;i++){
@@ -41,8 +41,8 @@ int factorial(int n){
 }
 
 int combination(int n,int r){
-     int val = factorial(n)/factorial(r)*factorial(n-1)<<endl;
-     return val;
+    int val = factorial(n)/factorial(r)*factorial(n-1);
+    return val;
 }
 
 vector<vector<int>> pascalTriangle(int n) {

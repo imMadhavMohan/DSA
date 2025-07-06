@@ -4,6 +4,27 @@
 using namespace std;
 
 /*
+3. Starting Point: n/2 - 1
+The reason we start the heapify process from index n/2 - 1 (the last non-leaf node) is because:
+
+For any node at index i, its children will be at 2i + 1 and 2i + 2.
+
+Nodes after index n/2 - 1 have no children, and thus don’t need to be heapified.
+n/2 - 1 is the index of the last non-leaf node in a complete binary tree
+*/
+
+/*
+4. Why Bottom-Up?
+The bottom-up approach is more efficient than top-down because:
+
+When we heapify from the bottom, we are working with smaller subtrees first.
+
+Each time we heapify a subtree, we "push down" the largest (in the case of max heap) 
+    or 
+smallest (in the case of min heap) element into place.
+*/
+
+/*
 Heap is like Pyramid or heap of apples always the max one is kept at the top & removed 1st
     2: 0
 1: 1     4: 2
