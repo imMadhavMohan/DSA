@@ -36,19 +36,19 @@ void sortArr(vector<int> &arr){
 /*Madhav's PAPA: Solution*/
 void sortColors(vector<int>& arr) {
         int p = 0, q = 0, r = arr.size()-1; int i=0;
-        while(i<arr.size()){
+        while(i<arr.size()){ // sort 1st 0's
             if(arr[i]==0)
                 swap(arr[p++], arr[i]);                       
             i++;
         } // set all zero
         i = p;
-        while(i<arr.size()){
+        while(i<arr.size()){ // sort 1's later
             if(arr[i]==1)
                 swap(arr[p++], arr[i]);
             i++;
         }
 
-    }
+}
 
 int main(){
     vector<int> arr = {0,0,2,1,1,1,1,2,0,2,0,1,0,2,0,2,0,0,2,2,0}; // 0 0 0 0 1 2 1 1M 2R

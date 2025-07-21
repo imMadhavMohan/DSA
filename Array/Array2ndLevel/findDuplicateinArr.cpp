@@ -41,7 +41,7 @@ int findDuplicate(const std::vector<int>& arr) {
         if(arr[slow]==arr[fast])
             break;
     }
-    slow = arr[0];
+    slow = arr[0]; // logic is we're resetting the slow pointer to the start & fast already in circular-loop
     while(slow != fast){
         slow = arr[slow];
         fast = arr[fast];
